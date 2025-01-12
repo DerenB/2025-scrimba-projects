@@ -1,0 +1,19 @@
+#header {
+    background-color: #f55a5a;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+#headerTitle {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+#globe {
+    width: 24px;
+    margin-right: 7px;
+}
