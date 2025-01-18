@@ -2,29 +2,31 @@ import React from 'react';
 
 import '../styles/Entry.css';
 
-function Entry() {
+import Marker from '../src/assets/marker.png';
+
+function Entry(props) {
     return (
         <article className='journalEntry'>
 
             <div className='mainImageContainer'>
-                <img className='mainImage' src='../src/assets/camping.jpg' />
+                <img className='mainImage' src={props.image} alt={props.title} />
             </div>
 
             <div className='infoContainer'>
 
                 <div className='infoHeader'>
-                    <img className='marker' src='../src/assets/marker.png' alt="map marker" />
+                    <img className='marker' src={Marker} alt="map marker" />
 
-                    <span className="country">Traverse City</span>
+                    <span className="country">{props.city}</span>
 
                     <a target='_blank' href='https://maps.app.goo.gl/kH8pH5BgiSu4vmU59'>
                         View on Google Maps
                     </a>
                 </div>
 
-                <h2 className="entryTitle">Campground</h2>
+                <h2 className="entryTitle">{props.title}</h2>
 
-                <p className='tripDates'>24 Aug, 2024 - 26 Aug, 2024</p>
+                <p className='tripDates'>{props.dates}</p>
 
                 <p className="entryText">
                     Went camping in Traverse City, Michigan. Stayed two nights, slept in 
