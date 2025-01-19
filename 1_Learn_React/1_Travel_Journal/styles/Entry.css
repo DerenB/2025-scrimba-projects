@@ -1,6 +1,7 @@
 
 article.journalEntry {
     display: flex;
+    margin-bottom: 30px;
 }
 
 
@@ -71,6 +72,14 @@ article.journalEntry .marker {
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;  
     overflow: hidden;
+}
+
+
+.breakLine {
+    border: 1px solid rgba(163, 163, 163, 0.45);
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 30px;
 }
 
 

@@ -1,13 +1,31 @@
 import { useState } from 'react';
 
+// Styles
 import '../styles/App.css';
 
+// Components
 import Header from  '../components/Header.jsx';
 import Entry from  '../components/Entry.jsx';
 
-import CampImage from "./assets/camping.jpg";
+// Data
+import data from '../data/TripData.js';
 
 function App() {
+
+  // Create list of Entry components
+  const entryElements = data.map((entry) => {
+    return (
+      <Entry 
+        key = {entry.id}
+        image = {entry.image}
+        mapUrl = {entry.mapUrl}
+        city = {entry.city}
+        title = {entry.title}
+        dates = {entry.dates}
+        text = {entry.text}
+      />
+    )
+  })
 
   return (
     <>
@@ -15,20 +33,8 @@ function App() {
 
       <main className='container'>
 
-        <Entry 
-          image = {CampImage}
-          mapUrl = "https://maps.app.goo.gl/kH8pH5BgiSu4vmU59"
-          city = "Traverse City"
-          title = "Campground"
-          dates = "24 Aug, 2024 - 26 Aug, 2024"
-          text = {
-            "Went camping in Traverse City, Michigan. Stayed two nights, slept in " + 
-            "the truck the first night and in a tent the second night. The campground " + 
-            "is called Keith J. Charters Traverse City State Park. Established in 1920, " + 
-            "the part is named after Keith J. Charters, a local conservationist and hunter."
-          }
-        />
-
+        {entryElements}
+        
       </main>
       
     </>
