@@ -16,13 +16,7 @@ function App() {
   const entryElements = data.map((entry) => {
     return (
       <Entry 
-        key = {entry.id}
-        image = {entry.image}
-        mapUrl = {entry.mapUrl}
-        city = {entry.city}
-        title = {entry.title}
-        dates = {entry.dates}
-        text = {entry.text}
+        {...entry}
       />
     )
   })
